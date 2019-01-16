@@ -1,0 +1,3 @@
+stage {
+	sh 'echo "a"'
+}
