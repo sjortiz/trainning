@@ -4,17 +4,11 @@ services:
   - docker
 
 before_install:
-  - docker build -t trainning_app:$ .
+  - docker build -t trainning_app .
 
 script:
+  - docker run -t trainning_app flake8
 
-  - if [ $TRAVIS_PULL_REQUEST == "false" ]
-    then
-      export image_tag=$TRAVIS_BRANCH
-    else
-      export image_tag=$TRAVIS_PULL_REQUEST
-    fi
-  - docker run -t trainning_app:${image_tag} flake8
 
 notifications:
   email: false

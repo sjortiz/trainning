@@ -5,11 +5,11 @@ import requests
 
 def ok():
 
-	print('Requesting google to see if there is internet')
+    print('Requesting google to see if there is internet')
 
-	r = requests.get('http://google.com')
+    r = requests.get('http://google.com')
 
-	print(f'The request was {r.ok}')
+    print(f'The request was {r.ok}')
 
     return r.ok
 
