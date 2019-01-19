@@ -1,8 +1,17 @@
 import time
 
+import requests
+
 
 def ok():
-    return 'ok'
+
+	print('Requesting google to see if there is internet')
+
+	r = requests.get('http://google.com')
+
+	print(f'The request was {r.ok}')
+
+    return r.ok
 
 
 if __name__ == '__main__':
