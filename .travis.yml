@@ -1,12 +1,14 @@
 sudo: required
 
-language: python
+services:
+  - docker
 
-python:
-  - 3.6
+before_install:
+  - docker build -t trainning_app .
 
 script:
-  - flake8
+  - docker run -t trainning_app flake8
+
 
 notifications:
   email: false
