@@ -7,8 +7,7 @@ before_install:
   - docker build -t trainning_app .
 
 script:
-  - docker run -t trainning_app flake8
-
+  - docker run -t trainning_app sh -c "flake8 && python -m pytest ./tests/"
 
 notifications:
   email: false
