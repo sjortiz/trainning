@@ -1,0 +1,18 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- script: pip install -r requirements.txt
+  displayName: 'Install the dependencies '
+
+- script: |
+    cd trainning
+    flake8
+    python -m pytest ./tests/
+  displayName: 'Executing the tests'
